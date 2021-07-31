@@ -1,0 +1,32 @@
+[
+  {
+    "instruction": "Select the Correct answer here :",
+    "question": "Inside which HTML element do we put the JavaScript??",
+    "answer": "the One",
+    "options": [
+      "the One",
+      "The second",
+      "The Third"
+    ]
+  },
+  {
+    "instruction": "Select the Correct answer here :",
+    "question": "What is Javascript",
+    "answer": "Programming Language",
+    "options": [
+      "Programming Language",
+      "A scripting Language",
+      "A web Language"
+    ]
+  },
+  {
+    "instruction": "Select the Correct answer here :",
+    "question": "Meaning of HTML",
+    "answer": "Hyper text Markup Language",
+    "options": [
+      "Hyper text Markup Language",
+      "Markup language",
+      "Learning Language"
+    ]
+  }
+]
