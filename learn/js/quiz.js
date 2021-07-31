@@ -1,5 +1,5 @@
 //Instruction
-const instruction = document.querySelectorAll(".instruction")
+const instruction = document.querySelector(".instruction")
 //Question
 const theQuestion = document.querySelector(".the_question")
 
@@ -10,13 +10,20 @@ const nextQues = document.querySelector("#nextQues")
 let availableQuestions = []
 let currentQuestion = {}
 let acceptingAnswers = false
+let score = 0
+
+const CURRECT_BUNOS = 10;
+incrementScore = num => {
+  score += num;
+  scoreText.innerText = score;
+};
 
 async function getQuestion() {
-  const response = await fetch("https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple");
-  // const response = await fetch("https://steamledge.com/mylearningfriend/students/ajax.php?ass=assessment_literacy_phonics_level_1");
+  // const response = await fetch("https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple");
+  const response = await fetch("https://steamledge.com/mylearningfriend/students/ajax.php?ass=assessment_literacy_phonics_level_1");
 
   const data = await response.json()
-  const questions = data.results
+  const questions = data
 
   availableQuestions = [...questions]
   getNewQuestion();
@@ -31,17 +38,17 @@ function getNewQuestion() {
   currentQuestion = availableQuestions[questionIndex]; // Getting only one question
 
   console.log(currentQuestion)
-  theQuestion.innerHTML = currentQuestion.question;
+  theQuestion.innerHTML = currentQuestion.q;
+  instruction.innerHTML = currentQuestion.inst
 
 
 
-  var options = currentQuestion.incorrect_answers;
-
-  options.splice(currentQuestion.answer - 1, 0, currentQuestion.correct_answer)
-  console.log(options)
-  for (let i = 0; i < options.length; i++) {
-    optionsCont.innerHTML += (`<input type="hidden" id="the_answer" value="` + currentQuestion.correct_answer + `">`)
-    optionsCont.innerHTML += (`<p class="option card" data-answer="` + options[i] + `">` + options[i] + `</p>`)
+  var options = [...currentQuestion.options]
+  cleanOptions = options.filter(Boolean)
+  console.log(cleanOptions)
+  for (let i = 0; i < cleanOptions.length; i++) {
+    optionsCont.innerHTML += (`<input type="hidden" id="the_answer" value="` + currentQuestion.ans + `">`)
+    optionsCont.innerHTML += (`<p class="option card" data-answer="` + cleanOptions[i] + `">` + cleanOptions[i] + `</p>`)
 
     // Getting Wrong and correct answer 
 
@@ -86,13 +93,28 @@ getQuestion()
 const corrsound = document.getElementById("correctsound")
 const wrrsound = document.getElementById("wrongsound")
 var scoreText = document.querySelector(".score")
+
 function correctAnswer() {
   corrsound.play()
   alert("You are correct")
-  scoreText.textContent = score
+  incrementScore(CURRECT_BUNOS)
 }
 function wrongAnswer() {
   wrrsound.play()
   alert(" You are Wrong")
 }
+
+// Timer
+var timer = document.querySelector("#timer")
+var timerCount = 15;
+var interval = setInterval(function () {
+  timer.innerHTML = timerCount + "secs";
+  timerCount--;
+  if (timerCount < 0) {
+    clearInterval(interval);
+    timer.innerHTML = 'Done';
+    // or...
+    alert("You're out of time!");
+  }
+}, 1000);
 

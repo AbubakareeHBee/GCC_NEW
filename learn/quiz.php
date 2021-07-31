@@ -26,7 +26,7 @@
         <div class="col-sm-8">
           <p class="userName">Aliyu Kamilu</p>
           <p class="regNo">GCC/TRN/002</p>
-          <p class="btn btn-danger"> Logout <i class="fas fa-power-off"></i>  </p>
+          <p class="btn btn-danger"> Logout <i class="fas fa-power-off"></i> </p>
         </div>
       </div>
 
@@ -35,8 +35,7 @@
           <li><span class="iconify" data-icon="fluent:home-48-regular" data-inline="false"></span> Home</li>
         </a>
         <a href="#learningCollapse" data-bs-toggle="collapse">
-          <li class="learningMenu"><span class="iconify" data-icon="fluent:learning-app-24-regular"
-              data-inline="false"></span> Learning</li>
+          <li class="learningMenu"><span class="iconify" data-icon="fluent:learning-app-24-regular" data-inline="false"></span> Learning</li>
         </a>
         <div class="collapse theLessonCollpase" id="learningCollapse">
           <a href="literacy.html">
@@ -57,14 +56,17 @@
     </aside>
 
     <main class="col-md-9 mainMenu">
-      <div class="d-flex justify-content-end">
-        <button class="btn" style="background: url('img/scoreboard.png')no-repeat scroll 0 0 transparent; background-size: contain; width: 150px; height: 150px;">
+      </div>
+      <div class=" d-flex justify-content-between">
+        <div>
+          <p class="timer" id="timer"></p>
+        </div>
+        <button class="btn" style="background: url('img/scoreboard.png')no-repeat scroll 0 0 transparent; background-size: contain; width: 150px; height: 50px;">
           <p class="score">0</p>
         </button>
       </div>
       <div class="homeContent d-flex justify-content-center">
         <section class="quiz_cont">
-            <p class="timer" id="timer"></p>
           <p class="instruction">Choose the Correct answer from the Options Below :</p>
           <p class="the_question">Question Loading ........ ?</p>
           <div class="optionsCont" id="optionsCont">
@@ -89,7 +91,7 @@
   <script src="css/dist/js/bootstrap.bundle.js"></script>
   <script src="js/quiz.js"></script>
   <script src="js/index.js"></script>
-  
+
 </body>
 
 </html>
