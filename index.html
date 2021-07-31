@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="icon" type="image/png" href="learn/img/icons/favicon.png"/>
+	<link rel="stylesheet" href="learn/css/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="learn/css/fontawesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
 </head>
-<body>
-    <h1>his</h1>
+<body background="images/Webp.net-compress-image.jpg">
+	<main class="container d-flex justify-content-center align-items-center">
+		<div class="LoginContainer text-center" style="width: 350px;">
+		  <img src="images/logo 1 (1).png" width="50%" alt="">
+		  <h3 class="text-center">Welcome Back</h3>
+		  <form action="" style="text-align: left;" id="elemId" class="" action="php/login_action.php" method="POST">
+			<label class="control-label text-muted mt-3">Student Id</label>
+			<div class="input-group">
+			  <span style="background: #fff; border-right: none;" class="input-group-text"><i class="fas fa-user-alt"></i></span>
+			  <input type="text" class="form-control" name="st_id" />
+			</div>
+			<label class="control-label text-muted mt-3">Password</label>
+			<div class="input-group">
+			  <span style="background: #fff; border-right: none;" class="input-group-text"><i class="fas fa-key"></i></span>
+			  <input type="password" class="form-control" name="password" />
+			</div>
+			<!-- <p class="text-center mt-3" >cant remember your password? <a href="forgot.html">reset</a></p> -->
+			<button type="submit" id="login" class="btn btn-primary mt-5" style="width: 100%;">Log In</button>
+		  </form>
+		  <div class="message_box1"></div>
+			<!-- <p class="text-center mt-2" >New to Learnig Friend ? <a href="register.html">Join now</a></p> -->
+		</div>
+	  </main>
+	
+	
+<script src="js/main.js"></script>
+<script src="js/jquery.js"></script>
+  <script src="css/dist/js/bootstrap.bundle.js"></script>
+  <script src="js/index.js"></script>
+<script>
+// 	$(document).ready(function() {
+//     var delay = 3000;
+//     $('#login').click(function(e){
+//       e.preventDefault();
+//         var username = $("#st_id").val();
+//       //  var lastname = $("#last-name").val();
+//        // var email = $("#email").val();
+//        var password = $("#password").val();
+//        // var userA = $("#flexCheckDefault").val();
+//         var reqAll = "lg=&username="+username+"&password="+password;
+//         $.ajax
+//         ({
+//              type: "GET",
+//              url: 'php/login_action.php?'+reqAll,
+//             //  data:{pass_pa:pass_p,em_phh:em_ph},
+//              beforeSend: function() {
+//              $('.message_box1').html(
+//             //  '<img src="images/load/spin.gif" width="400" height="200"/>'
+//              );
+//              },    
+//                    success: function(data)
+//              {
+//                setTimeout(function() {
+//                           $('.message_box1').html(data);
+//                       }, delay);
+            
+//                    }
+//          });
+//     });
+        
+//   });
+
+  var element = document.getElementById("elemId");
+element.setAttribute("action", "php/login_action.php");
+	
+</script>
 </body>
 </html>
