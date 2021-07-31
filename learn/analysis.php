@@ -25,14 +25,14 @@
         <div class="col-sm-8">
           <p class="userName">Aliyu Kamilu</p>
           <p class="regNo">GCC/TRN/002</p>
-          <a href="../index.html">
+          <a href="../index.php">
             <p class="btn btn-danger"> Logout <i class="fas fa-power-off"></i>  </p>
           </a>
         </div>
       </div>
 
       <ul class="menuUl">
-        <a href="index.html">
+        <a href="index.php">
           <li><span class="iconify" data-icon="fluent:home-48-regular" data-inline="false"></span> Home</li>
         </a>
         <a href="#learningCollapse" data-bs-toggle="collapse">
@@ -40,21 +40,21 @@
               data-inline="false"></span> Learning</li>
         </a>
         <div class="collapse theLessonCollpase" id="learningCollapse">
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="mdi:book-alphabet" data-inline="false"></span> Literacy</li>
           </a>
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="fluent:keyboard-123-24-regular" data-inline="false"></span> Numeracy
             </li>
           </a>
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="eos-icons:atom-electron" data-inline="false"></span> Science</li>
           </a>
         </div>
-        <a href="analysis.html" class="active">
+        <a href="analysis.php" class="active">
           <li><span class="iconify" data-icon="bi:graph-up" data-inline="false"></span> Learnig Analysis</li>
         </a>
-        <a href="dictionary.html">
+        <a href="dictionary.php">
           <li><span class="iconify" data-icon="mdi:book-open-page-variant-outline" data-inline="false"></span> Dictionary</li>
         </a>
       </ul>
@@ -92,7 +92,7 @@
                 <p class="text-muted" style="font-size: 14px;">LEARNED TIME</p>
                 <h4><span class="iconify" data-icon="bx:bx-time-five" data-inline="false"></span> 0 m</h4>
 
-                <a href="./literacy.html" class="btn btn-primary mt-3 px-5 py-3">Start Learning</a>
+                <a href="./literacy.php" class="btn btn-primary mt-3 px-5 py-3">Start Learning</a>
               </div>
 
               <div class="col-md-8">
