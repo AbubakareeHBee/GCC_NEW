@@ -13,7 +13,11 @@
   <link rel="stylesheet" href="css/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/fontawesome/css/all.css">
 
-
+  <style>
+    .alertCont .pointAler {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -56,6 +60,13 @@
     </aside>
 
     <main class="col-md-9 mainMenu">
+      <div class="alertCont">
+        <div class="alert text-center pointAler alert-success">
+          Yay 🥳 🤩 !!, You got 10 points 🧧
+        </div>
+        <div class="alert text-center pointAler alert-danger">
+          Oops  🙁 , Try Again !!
+        </div>
       </div>
       <div class=" d-flex justify-content-between">
         <div>

@@ -1,3 +1,5 @@
+const quiz_cont = document.querySelector(".quiz_cont")
+
 //Instruction
 const instruction = document.querySelector(".instruction")
 //Question
@@ -5,12 +7,14 @@ const theQuestion = document.querySelector(".the_question")
 
 const optionsCont = document.querySelector("#optionsCont")
 const nextQues = document.querySelector("#nextQues")
-
+const alertCont = document.querySelector(".alertCont")
 
 let availableQuestions = []
 let currentQuestion = {}
-let acceptingAnswers = false
+let acceptingAnswers = true
 let score = 0
+let Timerrunning = false
+let timerCount = 15
 
 const CURRECT_BUNOS = 10;
 incrementScore = num => {
@@ -41,7 +45,8 @@ function getNewQuestion() {
   theQuestion.innerHTML = currentQuestion.q;
   instruction.innerHTML = currentQuestion.inst
 
-
+  // Start Timer
+  Timerrunning = true
 
   var options = [...currentQuestion.options]
   cleanOptions = options.filter(Boolean)
@@ -49,6 +54,7 @@ function getNewQuestion() {
   for (let i = 0; i < cleanOptions.length; i++) {
     optionsCont.innerHTML += (`<input type="hidden" id="the_answer" value="` + currentQuestion.ans + `">`)
     optionsCont.innerHTML += (`<p class="option card" data-answer="` + cleanOptions[i] + `">` + cleanOptions[i] + `</p>`)
+
 
     // Getting Wrong and correct answer 
 
@@ -78,6 +84,7 @@ function getNewQuestion() {
 
 
   // availableQuestions.splice(questionIndex, 1);
+  timerCount = 15
   acceptingAnswers = true
 }
 
@@ -88,7 +95,39 @@ nextQues.addEventListener("click", function () {
 
 getQuestion()
 
+// Disabling clicking options 
+if (!acceptingAnswers) {
+  quiz_cont.style.pointerEvents = "none"
+}
 
+
+// Timer
+var timer = document.querySelector("#timer")
+var interval = setInterval(function () {
+  timer.innerHTML = timerCount + "secs";
+  if (Timerrunning) {
+    timerCount--;
+  }
+  if (timerCount < 0) {
+    clearInterval(interval);
+    alertCont.innerHTML += `<div class="alert timeUpAlert text-center alert-danger">
+      The correct Answer is `+ currentQuestion.ans + `
+    </div>`
+    $("alert.timeUpAlert").fadeIn(200)
+    var ii = document.querySelectorAll(".option")
+    ii.forEach((iii) => {
+      var answering = iii.dataset.answer
+      if(answering === currentQuestion.ans ) {
+        iii.classList.add("optionActive")
+      }
+
+    })
+    // const oo = $(".option")
+    // // .find(`[data-answer='${currentQuestion.ans}']`)
+    // console.log(oo.dataset)
+    acceptingAnswers = false
+  }
+}, 1000);
 
 const corrsound = document.getElementById("correctsound")
 const wrrsound = document.getElementById("wrongsound")
@@ -96,25 +135,14 @@ var scoreText = document.querySelector(".score")
 
 function correctAnswer() {
   corrsound.play()
-  alert("You are correct")
+  $(".alert-success").fadeIn(300).delay(1500).fadeOut(400);
+  Timerrunning = false
   incrementScore(CURRECT_BUNOS)
 }
 function wrongAnswer() {
+  $(".alert-danger").fadeIn(300).delay(1500).fadeOut(400);
   wrrsound.play()
-  alert(" You are Wrong")
 }
 
-// Timer
-var timer = document.querySelector("#timer")
-var timerCount = 15;
-var interval = setInterval(function () {
-  timer.innerHTML = timerCount + "secs";
-  timerCount--;
-  if (timerCount < 0) {
-    clearInterval(interval);
-    timer.innerHTML = 'Done';
-    // or...
-    alert("You're out of time!");
-  }
-}, 1000);
+
 
