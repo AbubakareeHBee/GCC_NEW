@@ -1,5 +1,3 @@
-<!-- ONLINE  -->
-
 <?php
 $hostname_gcc = "localhost";
 $database_gcc = "steazhex_gcc";
