@@ -59,14 +59,14 @@ include "../php/enctp.php";
         <div class="col-sm-8">
           <p class="userName"><?php echo $_SESSION['MM2_Username']; ?></p>
           <p class="regNo"><?php echo $_SESSION['MM_Username']; ?></p>
-          <a href="../index.html">
+          <a href="../index.php">
           <p class="btn btn-danger"> Logout <i class="fas fa-power-off"></i>  </p>
         </a>
         </div>
       </div>
 
       <ul class="menuUl">
-        <a href="index.html" class="active">
+        <a href="index.php" class="active">
           <li><span class="iconify" data-icon="fluent:home-48-regular" data-inline="false"></span><span> Home</span></li>
         </a>
         <a href="#learningCollapse" data-bs-toggle="collapse">
@@ -74,20 +74,20 @@ include "../php/enctp.php";
               data-inline="false"></span> <span>Learning</span></li>
         </a>
         <div class="collapse theLessonCollpase" id="learningCollapse">
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="mdi:book-alphabet" data-inline="false"></span> Literacy</li>
           </a>
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="fluent:keyboard-123-24-regular" data-inline="false"></span> Numeracy</li>
           </a>
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="eos-icons:atom-electron" data-inline="false"></span> Science</li>
           </a>
         </div>
-        <a href="analysis.html">
+        <a href="analysis.php">
           <li><span class="iconify" data-icon="bi:graph-up" data-inline="false"></span> <span>Learnig Analysis</span></li>
         </a>
-        <a href="dictionary.html">
+        <a href="dictionary.php">
           <li><span class="iconify" data-icon="mdi:book-open-page-variant-outline" data-inline="false"></span> <span>Dictionary</span></li>
         </a>
       </ul>
@@ -116,13 +116,13 @@ include "../php/enctp.php";
                 <p class="subjectName">Literacy</p>
               </div>
             </a>
-            <!-- <a href="literacy.html" style="text-decoration: none;" class="col-sm-4 col-xs-3">
+            <!-- <a href="literacy.php" style="text-decoration: none;" class="col-sm-4 col-xs-3">
               <div href="" class="cardo numeracy">
                 <span class="iconify" data-icon="fluent:keyboard-123-24-regular" data-inline="false"></span>
                 <p class="subjectName">Numeracy</p>
               </div>
             </a>
-            <a href="literacy.html" style="text-decoration: none;" class="col-sm-4 col-xs-3">
+            <a href="literacy.php" style="text-decoration: none;" class="col-sm-4 col-xs-3">
               <div href="" class="cardo science">
                 <span class="iconify" data-icon="eos-icons:atom-electron" data-inline="false"></span>
                 <p class="subjectName">Science</p>

@@ -67,7 +67,7 @@ include "../php/enctp.php";
                                         <p class="lesName">'.$get_module.'</p>
                                       </div>
                                       <div class="d-flex justify-content-end">
-                                        <a href="quiz.html" class="btn btn-primary"> Assessment</a>
+                                        <a href="quiz.php" class="btn btn-primary"> Assessment</a>
                                       </div>
                                       <div></div>
                                     </div>
@@ -123,7 +123,7 @@ include "../php/enctp.php";
                                         <p class="lesName">'.$get_module.'</p>
                                       </div>
                                       <div class="d-flex justify-content-end">
-                                        <a href="quiz.html" class="btn btn-primary"> Assessment</a>
+                                        <a href="quiz.php" class="btn btn-primary"> Assessment</a>
                                       </div>
                                       <div></div>
                                     </div>
@@ -197,14 +197,14 @@ include "../php/enctp.php";
         <div class="col-sm-8">
           <p class="userName">Aliyu Kamilu</p>
           <p class="regNo">GCC/TRN/002</p>
-          <a href="../index.html">
+          <a href="../index.php">
             <p class="btn btn-danger"> Logout <i class="fas fa-power-off"></i>  </p>
           </a>
         </div>
       </div>
 
       <ul class="menuUl">
-        <a href="index.html">
+        <a href="index.php">
           <li><span class="iconify" data-icon="fluent:home-48-regular" data-inline="false"></span> Home</li>
         </a>
         <a href="#learningCollapse" data-bs-toggle="collapse">
@@ -212,21 +212,21 @@ include "../php/enctp.php";
               data-inline="false"></span> Learning</li>
         </a>
         <div class="collapse theLessonCollpase" id="learningCollapse">
-          <a href="literacy.html" class="active">
+          <a href="literacy.php" class="active">
             <li><span class="iconify" data-icon="mdi:book-alphabet" data-inline="false"></span> Literacy</li>
           </a>
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="fluent:keyboard-123-24-regular" data-inline="false"></span> Numeracy
             </li>
           </a>
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="eos-icons:atom-electron" data-inline="false"></span> Science</li>
           </a>
         </div>
-        <a href="analysis.html">
+        <a href="analysis.php">
           <li><span class="iconify" data-icon="bi:graph-up" data-inline="false"></span> Learning Analysis</li>
         </a>
-        <a href="dictionary.html">
+        <a href="dictionary.php">
           <li><span class="iconify" data-icon="mdi:book-open-page-variant-outline" data-inline="false"></span> Dictionary</li>
         </a>
       </ul>
@@ -258,7 +258,7 @@ include "../php/enctp.php";
             <p class="text-muted" style="font-size: 12px;">Click to continue from where you stopped.</p>
           </div>
           <div class="col-sm-2">
-            <a href="video.html">
+            <a href="video.php">
             <svg class="playbtn" width="63" height="64" viewBox="0 0 63 64" fill="none">
               <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="63" height="64">
                 <path d="M0.822266 0.128906H62.84V63.4949H0.822266V0.128906Z" fill="#C4C4C4"></path>

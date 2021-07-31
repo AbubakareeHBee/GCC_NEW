@@ -132,14 +132,14 @@ foreach ($word_check as $keyWord => $valueWord) {
         <div class="col-sm-8">
           <p class="userName">Aliyu Kamilu</p>
           <p class="regNo">GCC/TRN/002</p>
-          <a href="/index.html">
+          <a href="/index.php">
             <p class="btn btn-danger"> Logout <i class="fas fa-power-off"></i>  </p>
           </a>
         </div>
       </div>
 
       <ul class="menuUl">
-        <a href="index.html" class="">
+        <a href="index.php" class="">
           <li><span class="iconify" data-icon="fluent:home-48-regular" data-inline="false"></span> <span>Home</span></li>
         </a>
         <a href="#learningCollapse" class="active" data-bs-toggle="collapse">
@@ -147,21 +147,21 @@ foreach ($word_check as $keyWord => $valueWord) {
               data-inline="false"></span> Learning</li>
         </a>
         <div class="collapse theLessonCollpase" id="learningCollapse">
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="mdi:book-alphabet" data-inline="false"></span> Literacy</li>
           </a>
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="fluent:keyboard-123-24-regular" data-inline="false"></span> Numeracy
             </li>
           </a>
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="eos-icons:atom-electron" data-inline="false"></span> Science</li>
           </a>
         </div>
-        <a href="analysis.html">
+        <a href="analysis.php">
           <li><span class="iconify" data-icon="bi:graph-up" data-inline="false"></span> Learnig Analysis</li>
         </a>
-        <a href="dictionary.html">
+        <a href="dictionary.php">
           <li><span class="iconify" data-icon="mdi:book-open-page-variant-outline" data-inline="false"></span> Dictionary</li>
         </a>
       </ul>
@@ -237,7 +237,7 @@ foreach ($word_check as $keyWord => $valueWord) {
         <section class="d-flex justify-content-center mt-4 all-content">
          <div class="col-md-8">
                <div style="float: right;">
-                 <!-- <a href="quiz.html" class="btn btn-primary"> Take Quiz</a> -->
+                 <!-- <a href="quiz.php" class="btn btn-primary"> Take Quiz</a> -->
                  <button type="button" class="btn btn-default" id="quizs" data-inline="false" data-bs-toggle="modal" data-bs-target="#costumModal28">Take Quiz </button>
                   
                 </div>

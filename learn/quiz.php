@@ -35,25 +35,25 @@
       </div>
 
       <ul class="menuUl">
-        <a href="index.html">
+        <a href="index.php">
           <li><span class="iconify" data-icon="fluent:home-48-regular" data-inline="false"></span> Home</li>
         </a>
         <a href="#learningCollapse" data-bs-toggle="collapse">
           <li class="learningMenu"><span class="iconify" data-icon="fluent:learning-app-24-regular" data-inline="false"></span> Learning</li>
         </a>
         <div class="collapse theLessonCollpase" id="learningCollapse">
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="mdi:book-alphabet" data-inline="false"></span> Literacy</li>
           </a>
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="fluent:keyboard-123-24-regular" data-inline="false"></span> Numeracy
             </li>
           </a>
-          <a href="literacy.html">
+          <a href="literacy.php">
             <li><span class="iconify" data-icon="eos-icons:atom-electron" data-inline="false"></span> Science</li>
           </a>
         </div>
-        <a href="analysis.html">
+        <a href="analysis.php">
           <li><span class="iconify" data-icon="bi:graph-up" data-inline="false"></span> Learnig Analysis</li>
         </a>
       </ul>
