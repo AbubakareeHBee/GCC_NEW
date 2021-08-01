@@ -8,15 +8,37 @@ const theQuestion = document.querySelector(".the_question")
 const optionsCont = document.querySelector("#optionsCont")
 const nextQues = document.querySelector("#nextQues")
 const alertCont = document.querySelector(".alertCont")
+const corrsound = document.getElementById("correctsound")
+const wrrsound = document.getElementById("wrongsound")
+var scoreText = document.querySelector(".score")
 
+function correctAnswer(vallue) {
+  current_bonus = vallue
+  corrsound.play()
+  $(".alert-success").fadeIn(300).delay(1500).fadeOut(400);
+  Timerrunning = false
+  incrementScore(current_bonus)
+}
+function correctAnswer1() {
+  
+  corrsound.play()
+  $(".alert-success").fadeIn(300).delay(1500).fadeOut(400);
+  Timerrunning = false
+  // incrementScore(current_bonus)
+}
+
+function wrongAnswer() {
+  $(".alert-danger").fadeIn(300).delay(1500).fadeOut(400);
+  wrrsound.play()
+}
 let availableQuestions = []
 let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0
 let Timerrunning = false
-let timerCount = 5
+let timerCount = 200
 
-const CURRECT_BUNOS = 10;
+let current_bonus = 10;
 incrementScore = num => {
   score += num;
   scoreText.innerText = score;
@@ -73,7 +95,7 @@ function getNewQuestion() {
       option.addEventListener("click", function () {
 
         if (option.dataset.answer === theAnswer) {
-          correctAnswer()
+          correctAnswer(10)
           document.getElementById('nextQues').style.visibility = 'visible';
 
         } else {
@@ -87,14 +109,57 @@ function getNewQuestion() {
 
 
   // availableQuestions.splice(questionIndex, 1);
-  timerCount = 5
+  timerCount = 200
   acceptingAnswers = true
+  var timer = document.querySelector("#timer")
+var interval = setInterval(function () {
+  timer.innerHTML = timerCount + "secs";
+  if (Timerrunning) {
+    timerCount--;
+  }
+  if (timerCount <= 0) {
+    clearInterval(interval);
+    // alertCont.innerHTML += `<div class="alert timeUpAlert text-center alert-success">
+    //   The correct Answer is `+ currentQuestion.ans + `
+    // </div>`
+    $("alert.timeUpAlert").fadeIn(200)
+    var ii = document.querySelectorAll(".option")
+    ii.forEach((iii) => {
+      var answering = iii.dataset.answer
+      if(answering === currentQuestion.ans ) {
+        iii.classList.add("optionActive")
+        correctAnswer1()
+        corrsound.play()
+        quiz_cont.style.pointerEvents = "none"
+        document.getElementById('nextQues').style.visibility = 'visible';
+        
+
+
+
+      }else{
+        // iii.setAttribute("onclick", "return false;");
+
+      }
+
+    })
+    // const oo = $(".option")
+    // // .find(`[data-answer='${currentQuestion.ans}']`)
+    // console.log(oo.dataset)
+    acceptingAnswers = false
+  }
+}, 1000);
 }
 
 nextQues.addEventListener("click", function () {
   optionsCont.innerHTML = ""
+  // alertCont.innerHTML = ""
   document.getElementById('nextQues').style.visibility = 'hidden';
+  quiz_cont.style.pointerEvents = ""
+  
   getNewQuestion();
+  // Timerrunning = true
+
+
 })
 
 getQuestion()
@@ -112,20 +177,22 @@ var interval = setInterval(function () {
   if (Timerrunning) {
     timerCount--;
   }
-  if (timerCount < 0) {
+  if (timerCount <= 0) {
     clearInterval(interval);
-    alertCont.innerHTML += `<div class="alert timeUpAlert text-center alert-success">
-      The correct Answer is `+ currentQuestion.ans + `
-    </div>`
+    // alertCont.innerHTML += `<div class="alert timeUpAlert text-center alert-success">
+    //   The correct Answer is `+ currentQuestion.ans + `
+    // </div>`
     $("alert.timeUpAlert").fadeIn(200)
     var ii = document.querySelectorAll(".option")
     ii.forEach((iii) => {
       var answering = iii.dataset.answer
       if(answering === currentQuestion.ans ) {
         iii.classList.add("optionActive")
+        correctAnswer1(0)
+        corrsound.play()
         quiz_cont.style.pointerEvents = "none"
         document.getElementById('nextQues').style.visibility = 'visible';
-
+        
 
 
 
@@ -138,24 +205,12 @@ var interval = setInterval(function () {
     // const oo = $(".option")
     // // .find(`[data-answer='${currentQuestion.ans}']`)
     // console.log(oo.dataset)
-    // acceptingAnswers = false
+    acceptingAnswers = false
   }
 }, 1000);
 
-const corrsound = document.getElementById("correctsound")
-const wrrsound = document.getElementById("wrongsound")
-var scoreText = document.querySelector(".score")
 
-function correctAnswer() {
-  corrsound.play()
-  $(".alert-success").fadeIn(300).delay(1500).fadeOut(400);
-  Timerrunning = false
-  incrementScore(CURRECT_BUNOS)
-}
-function wrongAnswer() {
-  $(".alert-danger").fadeIn(300).delay(1500).fadeOut(400);
-  wrrsound.play()
-}
+
 
 
 
