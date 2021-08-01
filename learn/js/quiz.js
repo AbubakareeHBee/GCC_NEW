@@ -15,14 +15,14 @@ var scoreText = document.querySelector(".score")
 function correctAnswer(vallue) {
   current_bonus = vallue
   corrsound.play()
-  $(".alert-success").fadeIn(300).delay(1500).fadeOut(400);
+  // $(".alert-success").fadeIn(300).delay(1500).fadeOut(400);
   Timerrunning = false
   incrementScore(current_bonus)
 }
 function correctAnswer1() {
   
   corrsound.play()
-  $(".alert-success").fadeIn(300).delay(1500).fadeOut(400);
+  // $(".alert-success").fadeIn(300).delay(1500).fadeOut(400);
   Timerrunning = false
   // incrementScore(current_bonus)
 }
@@ -36,7 +36,7 @@ let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0
 let Timerrunning = false
-let timerCount = 200
+let timerCount = 10
 
 let current_bonus = 10;
 incrementScore = num => {
@@ -95,11 +95,23 @@ function getNewQuestion() {
       option.addEventListener("click", function () {
 
         if (option.dataset.answer === theAnswer) {
+          quiz_cont.style.pointerEvents = "none"
           correctAnswer(10)
+          splitText()
           document.getElementById('nextQues').style.visibility = 'visible';
 
-        } else {
+        } else if(option.dataset.answer !== theAnswer){
+          // wrongAnswer()
+          console.log("wrong")
+          quiz_cont.style.pointerEvents = "none"
           wrongAnswer()
+          $(this).addClass('optionActive1');
+
+          document.getElementById('nextQues').style.visibility = 'visible';
+          
+
+
+
         }
 
       })
@@ -109,7 +121,7 @@ function getNewQuestion() {
 
 
   // availableQuestions.splice(questionIndex, 1);
-  timerCount = 200
+  timerCount = 10
   acceptingAnswers = true
   var timer = document.querySelector("#timer")
 var interval = setInterval(function () {
@@ -208,6 +220,27 @@ var interval = setInterval(function () {
     acceptingAnswers = false
   }
 }, 1000);
+
+
+function splitText() {
+  var a = document.getElementsByClassName('score');
+  for (var i = 0; i < a.length; i++) {
+      var $this = a[i];
+      var letter = $this.innerHTML;
+      letter = letter.trim();
+      var str = '';
+      var delay = 500;
+      for (l = 0; l < letter.length; l++) {
+          if (letter[l] != ' ') {
+              str += '<span style="animation-delay:' + delay + 'ms; -moz-animation-delay:' + delay + 'ms; -webkit-animation-delay:' + delay + 'ms; ">' + letter[l] + '</span>';
+              delay += 150;
+          }
+          else
+              str += letter[l];
+      }
+      $this.innerHTML = str;
+  }
+}
 
 
 

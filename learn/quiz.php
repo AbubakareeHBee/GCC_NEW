@@ -73,7 +73,7 @@
           <p class="timer" id="timer"></p>
         </div>
         <button class="btn" style="background: url('img/scoreboard.png')no-repeat scroll 0 0 transparent; background-size: contain; width: 150px; height: 50px;">
-          <p class="score">0</p>
+          <p class="score joltZoom">0</p>
         </button>
       </div>
       <div class="homeContent d-flex justify-content-center">

@@ -180,7 +180,7 @@ foreach ($word_check as $keyWord => $valueWord) {
         </div>
         <section class="videoSection d-flex justify-content-center">
           <div class="col-md-10 videoCont">
-            <video id="video">
+            <video id="video" autoplay>
               <source  preload="none" src="<?php echo $dir.$text[0]; ?>" id="source" type="video/mp4" />
             </video>
             <div id="player-controls">

@@ -347,6 +347,11 @@ body section.row:first-child {
   color: #0f5132;
   border: 2px solid #0f5132 !important;
 }
+.optionActive1 {
+  background-color: #f3c2b6 !important;
+  color: #ea7052;
+  border: 2px solid #ea7052 !important;
+}
 
 .option {
   background-color: #fff;
@@ -628,3 +633,32 @@ body section.row:first-child {
   border-bottom-color: #EEEEEE;
   background-color: #FAFAFA;
 }
+
+
+/* Animation for the score */
+
+/* body {overflow: hidden;}
+div { font-family: 'Ubuntu', sans-serif; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);} /* center text styling */
+button p { font-size: 4.5em; letter-spacing: -4px; font-weight: 700; color: #7e2ea0; text-align: center; } /* button p styling */
+@media screen and (max-width: 488px) { button p { font-size: 2.6em; letter-spacing: -2px; } } /* control h1 font size below 768px screen */
+
+/* animation duration and fill mode */
+.score span {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  display: inline-block;
+}
+
+/* joltZoom animation declaration */
+.joltZoom span { animation-name: joltZoom }
+
+/* joltZoom animation keyframes */
+@keyframes joltZoom {
+    10% { font-size: 140% }
+    40% { font-size: 80%; animation-timing-function: ease-out; }
+    100% { font-size: 100% }
+} 
+
+
+
+/* Animation for scores tooo */
