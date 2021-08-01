@@ -14,14 +14,14 @@ let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0
 let Timerrunning = false
-let timerCount = 15
+let timerCount = 5
 
 const CURRECT_BUNOS = 10;
 incrementScore = num => {
   score += num;
   scoreText.innerText = score;
 };
-
+document.getElementById('nextQues').style.visibility = 'hidden';
 async function getQuestion() {
   // const response = await fetch("https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple");
   const response = await fetch("https://steamledge.com/mylearningfriend/students/ajax.php?ass=assessment_literacy_phonics_level_1");
@@ -51,8 +51,9 @@ function getNewQuestion() {
   var options = [...currentQuestion.options]
   cleanOptions = options.filter(Boolean)
   console.log(cleanOptions)
+  optionsCont.innerHTML += (`<input type="hidden" id="the_answer" value="` + currentQuestion.ans + `">`) // i moved this off the loop you created below to avoid setting memories for redundant variables, you only need it once not to the count of the looping...
   for (let i = 0; i < cleanOptions.length; i++) {
-    optionsCont.innerHTML += (`<input type="hidden" id="the_answer" value="` + currentQuestion.ans + `">`)
+    
     optionsCont.innerHTML += (`<p class="option card" data-answer="` + cleanOptions[i] + `">` + cleanOptions[i] + `</p>`)
 
 
@@ -73,6 +74,8 @@ function getNewQuestion() {
 
         if (option.dataset.answer === theAnswer) {
           correctAnswer()
+          document.getElementById('nextQues').style.visibility = 'visible';
+
         } else {
           wrongAnswer()
         }
@@ -84,12 +87,13 @@ function getNewQuestion() {
 
 
   // availableQuestions.splice(questionIndex, 1);
-  timerCount = 15
+  timerCount = 5
   acceptingAnswers = true
 }
 
 nextQues.addEventListener("click", function () {
   optionsCont.innerHTML = ""
+  document.getElementById('nextQues').style.visibility = 'hidden';
   getNewQuestion();
 })
 
@@ -110,7 +114,7 @@ var interval = setInterval(function () {
   }
   if (timerCount < 0) {
     clearInterval(interval);
-    alertCont.innerHTML += `<div class="alert timeUpAlert text-center alert-danger">
+    alertCont.innerHTML += `<div class="alert timeUpAlert text-center alert-success">
       The correct Answer is `+ currentQuestion.ans + `
     </div>`
     $("alert.timeUpAlert").fadeIn(200)
@@ -119,13 +123,22 @@ var interval = setInterval(function () {
       var answering = iii.dataset.answer
       if(answering === currentQuestion.ans ) {
         iii.classList.add("optionActive")
+        quiz_cont.style.pointerEvents = "none"
+        document.getElementById('nextQues').style.visibility = 'visible';
+
+
+
+
+      }else{
+        // iii.setAttribute("onclick", "return false;");
+
       }
 
     })
     // const oo = $(".option")
     // // .find(`[data-answer='${currentQuestion.ans}']`)
     // console.log(oo.dataset)
-    acceptingAnswers = false
+    // acceptingAnswers = false
   }
 }, 1000);
 
